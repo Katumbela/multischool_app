@@ -51,7 +51,7 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///C:/Users/KATUMBELA/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-3.0.2",
+      "rootUri": "file:///C:/Users/KATUMBELA/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -81,9 +81,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///C:/Users/KATUMBELA/AppData/Local/Pub/Cache/hosted/pub.dev/lints-3.0.0",
+      "rootUri": "file:///C:/Users/KATUMBELA/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     },
     {
       "name": "matcher",
@@ -182,7 +182,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-06-08T16:33:27.649573Z",
+  "generated": "2024-06-08T16:45:11.507415Z",
   "generator": "pub",
   "generatorVersion": "3.4.1",
   "flutterRoot": "file:///C:/flutter",

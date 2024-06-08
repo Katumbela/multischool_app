@@ -15,5 +15,5 @@ class AppBgs {
 
 class AppUsers {
   static String user_1 = 'assets/users/user.png';
-  static String school_bg = 'assets/users/bg.png';
+  static String school_bg = 'assets/users/b.png';
 }
