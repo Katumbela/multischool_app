@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multischool_app/pages/homePage.dart';
+import 'package:multischool_app/pages/splash_home.dart';
 
 void main() {
   runApp(const MyApp());

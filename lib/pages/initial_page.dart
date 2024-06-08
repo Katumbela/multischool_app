@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:multischool_app/theme/bottom_label_style.dart';
+import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 
-import '../theme/colors.dart';
+import 'chat_screen_tab.dart';
+import 'home_screen_tab.dart';
+import 'identification_screen_tab.dart';
+import 'reports_screen_tab.dart';
 
 class InitialHomePage extends StatefulWidget {
   const InitialHomePage({super.key});
@@ -11,66 +17,57 @@ class InitialHomePage extends StatefulWidget {
 }
 
 class _InitialHomePageState extends State<InitialHomePage> {
+  int _currentIndex = 0;
+
+  // Lista de widgets que representam cada tela
+  final List<Widget> _children = [
+    HomeScreen(),
+    IdentificationScreen(),
+    ReportsScreen(),
+    ChatScreen(),
+  ];
+
+  // Atualiza o índice atual
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          HeadImage(),
-          SizedBox(height: 10),
-          Container(
-            child: Row(
-              children: <Widget>[
-                CircleAvatar(
-                  child: Image.asset(AppUsers.user_1),
-                )
-              ],
-            ),
+      body: _children[_currentIndex], // Exibe a tela correspondente
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        unselectedItemColor: Colors.grey,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        unselectedLabelStyle: TextStyle(color: Colors.black, fontSize: 10),
+        selectedLabelStyle: TextStyle(fontSize: 12),
+        selectedItemColor: AppColors.primary,
+        onTap: onTabTapped, // Atualiza o índice quando uma aba é tocada
+
+        currentIndex: _currentIndex, // Define a aba atualmente selecionada
+        items: [
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicial',
           ),
-          Container(child: Image.asset(AppUsers.user_1))
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(AppSvgs.identity_svg),
+            label: 'Identificação',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.insert_chart),
+            label: 'Relatórios',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message_outlined),
+            label: 'Chat',
+          ),
         ],
       ),
-    );
-  }
-
-  Widget HeadImage() {
-    return Stack(
-      children: [
-        Container(
-          height: MediaQuery.of(context).size.height * .2,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(.3),
-              image: DecorationImage(
-                image: AssetImage(AppBgs.school_bg),
-                fit: BoxFit.fill,
-              ),
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(65),
-                  bottomRight: Radius.circular(65))),
-        ),
-        Container(
-            height: MediaQuery.of(context).size.height * .2,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(.7),
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(65),
-                    bottomRight: Radius.circular(65))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Image.asset(
-                      AppImages.logo_for_dark,
-                      width: 180,
-                      height: 90,
-                    ))
-              ],
-            )),
-      ],
     );
   }
 }

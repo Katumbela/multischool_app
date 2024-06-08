@@ -1,0 +1,1 @@
+ C:\\Users\\KATUMBELA\\Documents\\Github\\multischool_app\\multischool_app\\.dart_tool\\flutter_build\\5f787a2e56bb94604526508a9a28bbb8\\native_assets.yaml: 
