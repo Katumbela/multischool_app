@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:multischool_app/config/colors.dart';
-import 'package:multischool_app/config/defaultTexts.dart';
-import 'package:multischool_app/config/imageExporter.dart';
-import 'package:multischool_app/pages/create_account.dart';
+import 'package:multischool_app/pages/login_page.dart';
+import 'package:multischool_app/theme/buttons_styles.dart';
+import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:quickalert/quickalert.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
 
 class HomePageMultiSchool extends StatefulWidget {
   const HomePageMultiSchool({super.key});
@@ -20,40 +17,38 @@ class _HomePageMultiSchoolState extends State<HomePageMultiSchool> {
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(color: AppColors.primary),
-            height: 200,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-                child: Text(
-              AppText.app_name,
-              style: TextStyle(color: Colors.white),
-            )),
-          ),
-          Container(child: Image.asset(AppImages.logo)),
-          Row(children: [
-            InkWell(
-                onTap: () => {
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              child: CreateAccountPage()))
-                    },
-                child: Text('Criar Conta')),
-            InkWell(
-                onTap: () => {
-                      QuickAlert.show(
-                        context: context,
-                        type: QuickAlertType.confirm,
-                        text: 'Do you want to logout',
-                        confirmBtnText: 'Yes',
-                        cancelBtnText: 'No',
-                        confirmBtnColor: Colors.green,
-                      )
-                    },
-                child: Text('Abrir Modal'))
-          ])
+          Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height *
+                            .3), // decoration: BoxDecoration(color: AppColors.primary),
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    child: Image.asset(AppIcons.logo_icon_dark)),
+                SizedBox(
+                  height: 30,
+                ),
+                ElevatedButton(
+                    onPressed: () => {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: LoginPage()))
+                        },
+                    style: ButtonPrimary.multiSchoolButton,
+                    child: Text('Entrar')),
+                SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                    onPressed: () => {print('clicad')},
+                    style: ButtonPrimary.multiSchoolButton,
+                    child: Text('Entrar')),
+              ])
         ],
       ),
     );
