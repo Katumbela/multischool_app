@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multischool_app/pages/splash_home.dart';
+import 'package:multischool_app/theme/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Multischool APP',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF012CB8)),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
       home: const HomePageMultiSchool(),
