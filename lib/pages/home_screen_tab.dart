@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../widgets/card_item.dart';
 import '../widgets/head_user.dart';
 import '../widgets/user_head_datas.dart';
+import 'saldo_container_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -31,24 +33,33 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Container(
-            child: const Column(
-              children: [
-                Text(
-                  'Saldo Disponível',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  '109 000,00 Kz',
-                  style: TextStyle(
-                      color: AppColors.primary,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
+          InkWell(
+            onTap: () => {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      child: SaldoContainer()))
+            },
+            child: Container(
+              child: const Column(
+                children: [
+                  Text(
+                    'Saldo Disponível',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    '109 000,00 Kz',
+                    style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
           ),
           Container(

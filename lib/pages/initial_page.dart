@@ -50,20 +50,36 @@ class _InitialHomePageState extends State<InitialHomePage> {
 
         currentIndex: _currentIndex, // Define a aba atualmente selecionada
         items: [
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppSvgs.home_svg,
+              width: 28,
+              color: _currentIndex == 0 ? AppColors.primary : Colors.grey,
+            ),
             label: 'Inicial',
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppSvgs.identity_svg),
+            icon: SvgPicture.asset(
+              AppSvgs.identity_svg,
+              width: 28,
+              color: _currentIndex == 1 ? AppColors.primary : Colors.grey,
+            ),
             label: 'Identificação',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.insert_chart),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              AppSvgs.report_svg,
+              width: 28,
+              color: _currentIndex == 2 ? AppColors.primary : Colors.grey,
+            ),
             label: 'Relatórios',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message_outlined),
+            icon: SvgPicture.asset(
+              AppSvgs.customer_svg,
+              width: 28,
+              color: _currentIndex == 3 ? AppColors.primary : Colors.grey,
+            ),
             label: 'Chat',
           ),
         ],

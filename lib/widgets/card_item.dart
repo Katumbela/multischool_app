@@ -38,11 +38,14 @@ class _CardItemState extends State<CardItem> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
+              Container( 
                 child: SvgPicture.asset(
                   widget.imageUrl,
                   width: 40,
                 ),
+              ),
+              SizedBox(
+                height: 5,
               ),
               Text(
                 widget.title,
