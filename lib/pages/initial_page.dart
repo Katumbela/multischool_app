@@ -16,26 +16,61 @@ class _InitialHomePageState extends State<InitialHomePage> {
     return Scaffold(
       body: ListView(
         children: [
-          Stack(
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height * .2,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: AppColors.primary.withOpacity(.1),
-                    image: DecorationImage(
-                      image: AssetImage(AppBgs.school_bg),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(65),
-                        bottomRight: Radius.circular(65))),
-              ),
-              Container(child: Image.asset(AppBgs.school_bg))
-            ],
+          HeadImage(),
+          SizedBox(height: 10),
+          Container(
+            child: Row(
+              children: <Widget>[
+                CircleAvatar(
+                  child: Image.asset(AppUsers.user_1),
+                )
+              ],
+            ),
           ),
+          Container(child: Image.asset(AppUsers.user_1))
         ],
       ),
+    );
+  }
+
+  Widget HeadImage() {
+    return Stack(
+      children: [
+        Container(
+          height: MediaQuery.of(context).size.height * .2,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+              color: AppColors.primary.withOpacity(.3),
+              image: DecorationImage(
+                image: AssetImage(AppBgs.school_bg),
+                fit: BoxFit.fill,
+              ),
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(65),
+                  bottomRight: Radius.circular(65))),
+        ),
+        Container(
+            height: MediaQuery.of(context).size.height * .2,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                color: AppColors.primary.withOpacity(.7),
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(65),
+                    bottomRight: Radius.circular(65))),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Image.asset(
+                      AppImages.logo_for_dark,
+                      width: 180,
+                      height: 90,
+                    ))
+              ],
+            )),
+      ],
     );
   }
 }

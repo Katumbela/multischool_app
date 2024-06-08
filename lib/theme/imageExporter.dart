@@ -10,5 +10,10 @@ class AppIcons {
 }
 
 class AppBgs {
-  static String school_bg = 'assets/bgs/bg_school.jpg';
+  static String school_bg = 'assets/bgs/bg.png';
+}
+
+class AppUsers {
+  static String user_1 = 'assets/users/user.png';
+  static String school_bg = 'assets/users/bg.png';
 }
