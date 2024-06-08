@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:multischool_app/theme/colors.dart';
+import 'package:multischool_app/theme/imageExporter.dart';
+import 'package:multischool_app/widgets/saldo_container/movimentos_tab.dart';
 
-import '../theme/imageExporter.dart';
 import '../widgets/saldo_container/dados_conta_tab.dart';
-import '../widgets/saldo_container/movimentos_tab.dart';
 import '../widgets/saldo_container/patrimonio_tab.dart';
 
 class SaldoContainer extends StatelessWidget {
@@ -12,50 +12,75 @@ class SaldoContainer extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          
-          toolbarHeight: 300, // Altera a altura do AppBar
-          backgroundColor: AppColors.primary,
-          flexibleSpace: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage(
-                      AppUsers.joao) // Substitua pela URL real da imagem
-                  ),
-              const SizedBox(height: 10),
-              const Text(
-                'Conta Estudante AKZ',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-              const Text(
-                'MÁRIO KENZO GUALDINO',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          bottom: const TabBar(
-            labelStyle: TextStyle(color: Colors.white),
-            tabs: [
-              Tab(text: 'Patrimônio'),
-              Tab(text: 'Movimentos'),
-              Tab(text: 'Dados da Conta'),
-            ],
-          ),
-        ),
-        body: TabBarView(
+        body: Stack(
           children: [
-            PatrimonioTab(),
-            MovimentosTab(),
-            DadosContaTab(),
+            NestedScrollView(
+              headerSliverBuilder:
+                  (BuildContext context, bool innerBoxIsScrolled) {
+                return [
+                  SliverAppBar(
+                    expandedHeight: 350.0,
+                    floating: false,
+                    pinned: true,
+                    flexibleSpace: FlexibleSpaceBar(
+                      centerTitle: true,
+                      title: const SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            CircleAvatar(
+                              radius: 40,
+                              backgroundImage: AssetImage(AppUsers.joao),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Conta Estudante AKZ',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
+                            ),
+                            Text(
+                              'JOAO A. KATOMBELA',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                          ],
+                        ),
+                      ),
+                      background: Container(
+                        color: AppColors.primary,
+                      ),
+                    ),
+                    bottom: const TabBar(
+                      labelColor: Colors.white,
+                      unselectedLabelStyle:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                      labelStyle:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                      tabs: [
+                        Tab(text: 'Patrimônio'),
+                        Tab(text: 'Movimentos'),
+                        Tab(text: 'Dados da Conta'),
+                      ],
+                    ),
+                  ),
+                ];
+              },
+              body: TabBarView(
+                children: [
+                  PatrimonioTab(),
+                  MovimentosTab(),
+                  DadosContaTab(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
