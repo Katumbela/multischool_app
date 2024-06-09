@@ -126,7 +126,7 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                       ),
                       Container(
                         child: SelectDropdown(
-                          placeholder: "Selecione a entidade"
+                          placeholder: "Selecione a entidade",
                           selectedValue: _selectedValue,
                           options: ['Opção 1', 'Opção 2', 'Opção 3'],
                           onChanged: (String? newValue) {
