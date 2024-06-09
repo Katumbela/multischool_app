@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 
-class PatrimonioTab extends StatelessWidget {
+class DocumentsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
           Text('Conta Estudante - AKZ'),
@@ -14,7 +13,7 @@ class PatrimonioTab extends StatelessWidget {
           SizedBox(height: 20),
           Card(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -38,4 +37,3 @@ class PatrimonioTab extends StatelessWidget {
     );
   }
 }
-

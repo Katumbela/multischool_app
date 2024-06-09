@@ -4,7 +4,7 @@ import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:multischool_app/widgets/saldo_container/movimentos_tab.dart';
 
 import '../widgets/saldo_container/dados_conta_tab.dart';
-import '../widgets/saldo_container/patrimonio_tab.dart';
+import '../widgets/saldo_container/documents_tab.dart';
 
 class SaldoContainer extends StatelessWidget {
   @override
@@ -65,9 +65,9 @@ class SaldoContainer extends StatelessWidget {
                       labelStyle:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                       tabs: [
-                        Tab(text: 'Patrimônio'),
-                        Tab(text: 'Movimentos'),
                         Tab(text: 'Dados da Conta'),
+                        Tab(text: 'Movimentos'),
+                        Tab(text: 'Extractos'),
                       ],
                     ),
                   ),
@@ -75,9 +75,9 @@ class SaldoContainer extends StatelessWidget {
               },
               body: TabBarView(
                 children: [
-                  PatrimonioTab(),
-                  MovimentosTab(),
                   DadosContaTab(),
+                  MovimentosTab(),
+                  DocumentsTab(),
                 ],
               ),
             ),
