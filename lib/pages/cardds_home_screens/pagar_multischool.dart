@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:multischool_app/widgets/cards_home_screens/screen_header.dart';
+import 'package:multischool_app/widgets/cards_home_screens/select_drop_down.dart';
 
 class PagarMultischool extends StatefulWidget {
   const PagarMultischool({super.key});
@@ -12,6 +13,8 @@ class PagarMultischool extends StatefulWidget {
 }
 
 class _PagarMultischoolState extends State<PagarMultischool> {
+  String? _selectedValue;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,9 +80,9 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                     left: 20,
                     right: 20,
                   ),
-                  padding: EdgeInsets.symmetric(verti),
+                  padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
                   width: MediaQuery.of(context).size.width,
-                  height: 150,
+                  //height: 150,
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
                       //image: AssetImage(assetName),
@@ -104,20 +107,36 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                         style: TextStyle(fontSize: 20),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 15,
                       ),
-                      Text(
-                        '100 324 3434 1 000',
-                        style: TextStyle(fontSize: 16),
+                      Container(
+                        child: SelectDropdown(
+                          selectedValue: _selectedValue,
+                          options: ['Opção 1', 'Opção 2', 'Opção 3'],
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              _selectedValue = newValue;
+                            });
+                          },
+                        ),
                       ),
                       SizedBox(
-                        height: 5,
+                        height: 15,
                       ),
-                      Text(
-                        '190 450.00 kz',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700),
+                      Container(
+                        child: SelectDropdown(
+                          selectedValue: _selectedValue,
+                          options: ['Opção 1', 'Opção 2', 'Opção 3'],
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              _selectedValue = newValue;
+                            });
+                          },
+                        ),
                       ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Serviço'),
+                      )
                     ],
                   ),
                 ),
