@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class SelectDropdown extends StatelessWidget {
   final String? selectedValue;
+  final String? placeholder;
   final List<String> options;
   final ValueChanged<String?>? onChanged;
 
@@ -9,6 +10,7 @@ class SelectDropdown extends StatelessWidget {
     required this.selectedValue,
     required this.options,
     required this.onChanged,
+    required this.placeholder,
   });
 
   @override
@@ -30,7 +32,7 @@ class SelectDropdown extends StatelessWidget {
         }).toList(),
         onChanged: onChanged,
         isExpanded: true, // Faz o dropdown ocupar toda a largura disponível
-        hint: Text("Selecione uma opção"),
+        hint: Text(placeholder),
         underline: SizedBox(), // Remove a linha inferior
       ),
     );
