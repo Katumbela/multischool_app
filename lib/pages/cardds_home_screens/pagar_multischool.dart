@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:multischool_app/widgets/cards_home_screens/screen_header.dart';
@@ -76,6 +77,7 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                     left: 20,
                     right: 20,
                   ),
+                  padding: EdgeInsets.symmetric(verti),
                   width: MediaQuery.of(context).size.width,
                   height: 150,
                   decoration: BoxDecoration(
@@ -83,7 +85,7 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                       //image: AssetImage(assetName),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
+                            color: Colors.grey.withOpacity(.3),
                             spreadRadius: 2,
                             blurRadius: 5,
                             offset: Offset(0, 3))
@@ -93,8 +95,12 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SvgPicture.asset(
+                        AppSvgs.wallet_svg,
+                        width: 55,
+                      ),
                       Text(
-                        'CONTA',
+                        'Pagamento',
                         style: TextStyle(fontSize: 20),
                       ),
                       SizedBox(
