@@ -67,6 +67,54 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                     ],
                   ),
                 ),
+
+                // form do deposito
+
+                Container(
+                  margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .05,
+                    left: 20,
+                    right: 20,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      //image: AssetImage(assetName),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3))
+                      ],
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'CONTA',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '100 324 3434 1 000',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '190 450.00 kz',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w700),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           )
