@@ -19,10 +19,26 @@ class _PagarMultischoolState extends State<PagarMultischool> {
           CardScreenHeader(),
           SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: Container(
-              child: Column(
-                children: [Text('CONTA')],
-              ),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .18,
+                    left: 20,
+                    right: 20,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text('CONTA')],
+                  ),
+                ),
+              ],
             ),
           )
         ],
