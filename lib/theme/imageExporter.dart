@@ -20,6 +20,12 @@ class AppUsers {
 
 class AppSvgs {
   static String bell_svg = 'assets/svgs/bell.svg';
+  //static String deposito_svg = 'assets/svgs/piggy-bank-svgrepo-com.svg';
+  static String transfer_svg = 'assets/svgs/arrow-swap-svgrepo-com.svg';
+  static String saida_svg = 'assets/svgs/arrow-up-from-bracket-svgrepo-com.svg';
+  static String entrada_svg =
+      'assets/svgs/arrow-down-to-bracket-svgrepo-com.svg';
+  static String arrow_up_svg = 'assets/svgs/arrowup-svgrepo-com.svg';
   static String customer_svg =
       'assets/svgs/customer-service-woman-svgrepo-com.svg';
   static String home_svg = 'assets/svgs/home-1-svgrepo-com.svg';

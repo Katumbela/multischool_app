@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multischool_app/theme/colors.dart';
 
 class DadosContaTab extends StatelessWidget {
   @override
@@ -11,9 +12,35 @@ class DadosContaTab extends StatelessWidget {
         children: [
           const Text('Conta Estudante - AKZ'),
           const SizedBox(
-            height: 10,
+            height: 6,
           ),
-          const Text('295190976 10 001'),
+          const Text('Número',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: AppColors.primary)),
+          const Row(
+            children: [
+              Text('295190976 10 001'),
+              SizedBox(
+                width: 5,
+              ),
+              Icon(Icons.copy_all, size: 18)
+            ],
+          ),
+          const SizedBox(
+            height: 6,
+          ),
+          const Text('IBAN',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: AppColors.primary)),
+          const Row(
+            children: [
+              Text('AO06 0040 3429 5190976 1002 10'),
+              SizedBox(
+                width: 5,
+              ),
+              Icon(Icons.copy_all, size: 18)
+            ],
+          ),
           const SizedBox(
             height: 10,
           ),
@@ -24,17 +51,17 @@ class DadosContaTab extends StatelessWidget {
           Center(
             child: Card(
               child: Padding(
-                padding: EdgeInsets.all(26.0),
+                padding: const EdgeInsets.all(26.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Saldo Contabilístico'),
+                    const Text('Saldo Contabilístico'),
                     Text('100 000,00 AKZ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.green[700])),
-                    SizedBox(height: 10),
-                    Text('Saldo Disponível'),
+                    const SizedBox(height: 10),
+                    const Text('Saldo Disponível'),
                     Text('98 899,99 AKZ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -45,7 +72,7 @@ class DadosContaTab extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 40),
-          const Text('Saldo Passivo', style: TextStyle(color: Colors.red)),
+          const Text('Saldo Passivo', style: TextStyle(color: Colors.black)),
           const Text('100 000,00 AKZ',
               style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
         ],

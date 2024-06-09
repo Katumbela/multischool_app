@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multischool_app/config/transacao_config.dart';
 import 'package:multischool_app/domain/models/transacao.dart';
 import 'package:multischool_app/widgets/movimentos/tabela_movimentos.dart';
 
@@ -6,29 +7,29 @@ class MovimentosTab extends StatelessWidget {
   final List<Transacao> transacoes = [
     Transacao(
         data: DateTime.now(),
-        descricao: 'Compra de Livros',
-        valor: -50.00,
-        type: 'Entrada'),
+        descricao: 'Roberto Portela',
+        valor: 5000,
+        type: TransacaoData.SAIDA),
     Transacao(
         data: DateTime.now(),
-        descricao: 'Salário',
-        valor: 1000.00,
-        type: 'Entrada'),
+        descricao: 'Arreiou - Supe...',
+        valor: 1000,
+        type: TransacaoData.ENTRADA),
     Transacao(
         data: DateTime.now(),
-        descricao: 'Aluguel',
-        valor: -500.00,
-        type: 'Saida'),
+        descricao: 'Mário Kenzo G...',
+        valor: -500,
+        type: TransacaoData.PAGAMENTO),
     Transacao(
         data: DateTime.now(),
         descricao: 'Supermercado',
-        valor: -150.00,
-        type: 'Saida'),
+        valor: -150,
+        type: TransacaoData.TRANSFERENCIA),
     Transacao(
         data: DateTime.now(),
-        descricao: 'Transporte',
-        valor: -75.00,
-        type: 'Saida'),
+        descricao: 'Depósito',
+        valor: 7508,
+        type: TransacaoData.DEPOSITO),
   ];
 
   @override

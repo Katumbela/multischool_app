@@ -1,5 +1,6 @@
 // Telas fictícias para cada aba
 import 'package:flutter/material.dart';
+import 'package:multischool_app/pages/cardds_home_screens/pagar_multischool.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:page_transition/page_transition.dart';
@@ -71,9 +72,19 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CardItem(
-                            imageUrl: AppSvgs.wallet_svg,
-                            title: 'Pagar Multischool'),
+                        InkWell(
+                          onTap: () => {
+
+                                Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: PagarMultischool()))
+                          },
+                          child: CardItem(
+                              imageUrl: AppSvgs.wallet_svg,
+                              title: 'Pagar Multischool'),
+                        ),
 
                         SizedBox(width: 20), // Gap of 20 pixe
 
