@@ -1,5 +1,6 @@
 class AppImages {
   static String logo = 'assets/logos/bg-cards.png';
+  static String oscar_ribas = 'assets/logos/oscar_ribas.png';
   static String logo_for_white = 'assets/logos/logo_for_white_bg.png';
   static String logo_for_dark = 'assets/logos/logo_for_dark_bg.png';
 }
@@ -20,6 +21,7 @@ class AppUsers {
 
 class AppSvgs {
   static String bell_svg = 'assets/svgs/bell.svg';
+  static String pin_map_svg = 'assets/svgs/gps-location-map-svgrepo-com.svg';
   static String who2_svg =
       'assets/svgs/men-and-women-who-bow-and-apologize-upper-body-svgrepo-com (2).svg';
   static String megaphone_svg = 'assets/svgs/megaphone-speaker-svgrepo-com.svg';

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multischool_app/pages/universities_pages/quem_somos.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:multischool_app/widgets/cards_home_screens/screen_header.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Universidade extends StatefulWidget {
   const Universidade({super.key});
@@ -63,35 +65,45 @@ class _UniversidadeState extends State<Universidade> {
                 const SizedBox(
                   height: 35,
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .01,
-                    left: 20,
-                    right: 20,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      //image: AssetImage(assetName),
+                InkWell(
+                  onTap: () => {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.leftToRight,
+                            child: QuemSomosUniversity()))
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * .01,
+                      left: 20,
+                      right: 20,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        //image: AssetImage(assetName),
 
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AppSvgs.who_svg,
-                        width: 60,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        'Quem somos',
-                        style: TextStyle(fontSize: 16),
-                      )
-                    ],
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AppSvgs.pin_map_svg,
+                          color: AppColors.primary,
+                          width: 60,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          'Quem somos',
+                          style: TextStyle(fontSize: 16),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
