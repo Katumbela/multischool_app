@@ -32,7 +32,7 @@ class SelectDropdown extends StatelessWidget {
         }).toList(),
         onChanged: onChanged,
         isExpanded: true, // Faz o dropdown ocupar toda a largura disponível
-        hint: Text(placeholder),
+        hint: Text(placeholder!),
         underline: SizedBox(), // Remove a linha inferior
       ),
     );

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multischool_app/config/transacao_config.dart';
 import 'package:multischool_app/domain/models/transacao.dart';
 import 'package:multischool_app/theme/colors.dart';
-import 'package:multischool_app/theme/imageExporter.dart';
 
 class TransacaoTable extends StatelessWidget {
   final List<Transacao> transacoes;
@@ -15,6 +13,8 @@ class TransacaoTable extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: DataTable(
+        headingRowHeight: 30, // Altura do cabeçalho
+        dataRowHeight: 35,
         columns: [
           DataColumn(label: Text('Data')),
           DataColumn(label: Text('Descrição')),

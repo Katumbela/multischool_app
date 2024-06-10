@@ -20,6 +20,16 @@ class AppUsers {
 
 class AppSvgs {
   static String bell_svg = 'assets/svgs/bell.svg';
+  static String who2_svg =
+      'assets/svgs/men-and-women-who-bow-and-apologize-upper-body-svgrepo-com (2).svg';
+  static String megaphone_svg = 'assets/svgs/megaphone-speaker-svgrepo-com.svg';
+  static String books_beca_svg =
+      'assets/svgs/knowledge-book-education-learning-books-svgrepo-com.svg';
+  static String video_aula_svg =
+      'assets/svgs/training-elearning-education-tablet-online-electronics-svgrepo-com.svg';
+  static String secretary_svg = 'assets/svgs/secretary-svgrepo-com.svg';
+  static String who_svg =
+      'assets/svgs/men-and-women-who-bow-and-apologize-upper-body-svgrepo-com.svg';
   //static String deposito_svg = 'assets/svgs/piggy-bank-svgrepo-com.svg';
   static String transfer_svg = 'assets/svgs/arrow-swap-svgrepo-com.svg';
   static String saida_svg = 'assets/svgs/arrow-up-from-bracket-svgrepo-com.svg';

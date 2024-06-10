@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Multischool APP',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'roboto', // Definindo a fonte globalmente
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multischool_app/pages/login_page.dart';
+import 'package:multischool_app/theme/buttons_styles.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:multischool_app/widgets/cards_home_screens/screen_header.dart';
 import 'package:multischool_app/widgets/cards_home_screens/select_drop_down.dart';
+import 'package:page_transition/page_transition.dart';
 
 class PagarMultischool extends StatefulWidget {
   const PagarMultischool({super.key});
@@ -13,7 +16,8 @@ class PagarMultischool extends StatefulWidget {
 }
 
 class _PagarMultischoolState extends State<PagarMultischool> {
-  String? _selectedValue;
+  String? _entidadeSelect;
+  String? _servicoSelect;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +88,7 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                   width: MediaQuery.of(context).size.width,
                   //height: 150,
                   decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Colors.grey[100],
                       //image: AssetImage(assetName),
                       boxShadow: [
                         BoxShadow(
@@ -112,11 +116,15 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                       Container(
                         child: SelectDropdown(
                           placeholder: "Selecione o serviço",
-                          selectedValue: _selectedValue,
-                          options: ['Opção 1', 'Opção 2', 'Opção 3'],
+                          selectedValue: _servicoSelect,
+                          options: [
+                            'Pagamento propina',
+                            'Outro exemplo',
+                            'Opção 3'
+                          ],
                           onChanged: (String? newValue) {
                             setState(() {
-                              _selectedValue = newValue;
+                              _servicoSelect = newValue;
                             });
                           },
                         ),
@@ -127,21 +135,64 @@ class _PagarMultischoolState extends State<PagarMultischool> {
                       Container(
                         child: SelectDropdown(
                           placeholder: "Selecione a entidade",
-                          selectedValue: _selectedValue,
-                          options: ['Opção 1', 'Opção 2', 'Opção 3'],
+                          selectedValue: _entidadeSelect,
+                          options: [
+                            'Banco BFA',
+                            'Banco SOl 2',
+                            'Angola MUlti 3'
+                          ],
                           onChanged: (String? newValue) {
                             setState(() {
-                              _selectedValue = newValue;
+                              _entidadeSelect = newValue;
                             });
                           },
                         ),
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Serviço'),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(labelText: 'Montante'),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(labelText: 'Contacto'),
                       )
                     ],
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * .06,
+                      left: MediaQuery.of(context).size.width * .59,
+                      right: 16),
+                  child: ElevatedButton(
+                      onPressed: () => {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: LoginPage()))
+                          },
+                      style: ButtonPrimary.multiSchoolButton,
+                      child: Row(
+                        children: [
+                          Text(
+                            'Validar',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Icon(
+                            Icons.arrow_forward_outlined,
+                            size: 18,
+                            color: Colors.white,
+                          )
+                        ],
+                      )),
+                )
               ],
             ),
           )

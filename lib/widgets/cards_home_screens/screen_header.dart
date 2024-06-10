@@ -23,7 +23,7 @@ class _CardScreenHeaderState extends State<CardScreenHeader> {
                 image: AssetImage(AppBgs.school_bg),
                 fit: BoxFit.fill,
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(45),
                   bottomRight: Radius.circular(45))),
         ),
@@ -32,7 +32,7 @@ class _CardScreenHeaderState extends State<CardScreenHeader> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 color: AppColors.primary.withOpacity(1),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45))),
             child: Column(
@@ -40,12 +40,14 @@ class _CardScreenHeaderState extends State<CardScreenHeader> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                     alignment: Alignment.topLeft,
                     width: MediaQuery.of(context).size.width,
                     child: InkWell(
-                      onTap: () => {Navigator.pop(context)},
-                      child: Icon(
+                      onTap: () => {
+                        Navigator.pop(context), 
+                      print('clicado')},
+                      child: const Icon(
                         Icons.arrow_back_sharp,
                         size: 30,
                         color: Colors.white,

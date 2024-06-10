@@ -1,6 +1,8 @@
 // Telas fictícias para cada aba
 import 'package:flutter/material.dart';
+import 'package:multischool_app/pages/cardds_home_screens/mensalidades.dart';
 import 'package:multischool_app/pages/cardds_home_screens/pagar_multischool.dart';
+import 'package:multischool_app/pages/cardds_home_screens/universidade.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 import 'package:page_transition/page_transition.dart';
@@ -74,12 +76,11 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () => {
-
-                                Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.rightToLeft,
-                                  child: PagarMultischool()))
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: PagarMultischool()))
                           },
                           child: CardItem(
                               imageUrl: AppSvgs.wallet_svg,
@@ -88,12 +89,30 @@ class HomeScreen extends StatelessWidget {
 
                         SizedBox(width: 20), // Gap of 20 pixe
 
-                        CardItem(
-                            imageUrl: AppSvgs.bill_svg, title: 'Mensalidade'),
+                        InkWell(
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: MensalidadesMultiSchool()))
+                          },
+                          child: CardItem(
+                              imageUrl: AppSvgs.bill_svg, title: 'Mensalidade'),
+                        ),
                         SizedBox(width: 20), // Gap of 20 pixelsls
-                        CardItem(
-                            imageUrl: AppSvgs.school_svg,
-                            title: 'Universidade'),
+                        InkWell(
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: Universidade()))
+                          },
+                          child: CardItem(
+                              imageUrl: AppSvgs.school_svg,
+                              title: 'Universidade'),
+                        ),
                       ],
                     )),
 
