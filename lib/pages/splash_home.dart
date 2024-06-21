@@ -47,7 +47,7 @@ class _HomePageMultiSchoolState extends State<HomePageMultiSchool> {
                 ElevatedButton(
                     onPressed: () => {print('clicad')},
                     style: ButtonPrimary.multiSchoolButton,
-                    child: Text('Entrar')),
+                    child: Text('Cadastro')),
               ])
         ],
       ),

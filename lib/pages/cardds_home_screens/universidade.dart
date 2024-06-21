@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multischool_app/pages/cardds_home_screens/secretaria_page.dart';
 import 'package:multischool_app/pages/universities_pages/quem_somos.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
@@ -109,35 +110,49 @@ class _UniversidadeState extends State<Universidade> {
                 const SizedBox(
                   height: 35,
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      //image: AssetImage(assetName),
+                InkWell(
 
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AppSvgs.secretary_svg,
-                        width: 60,
-                        color: AppColors.primary,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        'Secretaria',
-                        style: TextStyle(fontSize: 16),
-                      )
-                    ],
+                  
+                   onTap: () => {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.leftToRight,
+                            child:  SecretariaCardsPage()))
+                  },
+
+
+
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      left: 20,
+                      right: 20,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        //image: AssetImage(assetName),
+                  
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          AppSvgs.secretary_svg,
+                          width: 60,
+                          color: AppColors.primary,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          'Secretaria',
+                          style: TextStyle(fontSize: 16),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(

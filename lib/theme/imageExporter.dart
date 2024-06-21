@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppImages {
   static String logo = 'assets/logos/bg-cards.png';
   static String oscar_ribas = 'assets/logos/oscar_ribas.png';
@@ -17,6 +19,11 @@ class AppBgs {
 class AppUsers {
   static const String user_1 = 'assets/icons/joao.png';
   static const String joao = 'assets/icons/joao.png';
+}
+
+
+class Qualquer {
+  static const Text textoPriomaroo = Text('Textos swf hshefef ');
 }
 
 class AppSvgs {
