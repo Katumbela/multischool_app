@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multischool_app/pages/cardds_home_screens/matricula_Atual.dart';
 import 'package:multischool_app/pages/universities_pages/quem_somos.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
@@ -56,7 +57,7 @@ class _SecretariaCardsPageState extends State<SecretariaCardsPage> {
                       height: 10,
                     ),
                     const Text(
-                      'Secretária',
+                      'Secretária  ',
                       style: TextStyle(fontSize: 20),
                     )
                   ],
@@ -71,8 +72,54 @@ class _SecretariaCardsPageState extends State<SecretariaCardsPage> {
                       context,
                       PageTransition(
                           type: PageTransitionType.leftToRight,
+                          child: const MatriculaActual()))
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * .01,
+                    left: 20,
+                    right: 20,
+                  ),
+                  width: MediaQuery.of(context).size.width,
+                  height: 150,
+                  decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      //image: AssetImage(assetName),
+
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                        AppSvgs.actual_subsription_2_svg,
+                        width: 50,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        'Matrícula Atual',
+                        style: TextStyle(fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 35,
+              ),
+              InkWell(
+                onTap: () => null,
+                /*
+                {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.leftToRight,
                           child: const QuemSomosUniversity()))
                 },
+                */
                 child: Container(
                   margin: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * .01,
@@ -107,45 +154,6 @@ class _SecretariaCardsPageState extends State<SecretariaCardsPage> {
               ),
               const SizedBox(
                 height: 35,
-              ),
-              InkWell(
-                onTap: () => {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.leftToRight,
-                          child: const SecretariaCardsPage()))
-                },
-                child: Container(
-                  margin: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                  ),
-                  width: MediaQuery.of(context).size.width,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      //image: AssetImage(assetName),
-
-                      borderRadius: BorderRadius.circular(15)),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.calendar_month_sharp,
-                        size: 60,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Calendário de Provas ',
-                        style: TextStyle(fontSize: 16),
-                      )
-                    ],
-                  ),
-                ),
               ),
               const SizedBox(
                 height: 35,
@@ -242,7 +250,7 @@ class _SecretariaCardsPageState extends State<SecretariaCardsPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.calendar_view_day_outlined,
+                      Icons.calendar_view_day_rounded,
                       size: 60,
                     ),
                     SizedBox(

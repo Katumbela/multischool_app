@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:multischool_app/pages/cardds_home_screens/mensalidades.dart';
 import 'package:multischool_app/pages/cardds_home_screens/pagar_multischool.dart';
+import 'package:multischool_app/pages/cardds_home_screens/servico_multischool_page.dart';
+import 'package:multischool_app/pages/cardds_home_screens/social_media_pages/home_social_media.dart';
 import 'package:multischool_app/pages/cardds_home_screens/universidade.dart';
 import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
@@ -28,9 +30,9 @@ class HomeScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.blue,
-            ),
+                borderRadius: BorderRadius.circular(15),
+                color: AppColors.primary,
+                image: DecorationImage(image: AssetImage(AppImages.visa_card))),
           ),
 
           const SizedBox(
@@ -123,18 +125,37 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CardItem(
-                            imageUrl: AppSvgs.bank_svg,
-                            title: 'Serviço Multischool'),
+                        InkWell(
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: ServiceMultiShool()))
+                          },
+                          child: CardItem(
+                              imageUrl: AppSvgs.bank_svg,
+                              title: 'Serviço Multischool'),
+                        ),
 
                         SizedBox(width: 20), // Gap of 20 pixels
                         CardItem(
                             imageUrl: AppSvgs.graph_up_svg,
-                            title: 'Empreendedorismo'),
+                            title: 'Empeendedorismo'),
 
                         SizedBox(width: 20), // Gap of 20 pixels
-                        CardItem(
-                            imageUrl: AppSvgs.bill_svg, title: 'Mensalidade')
+                        InkWell(
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: HomeSocialMedia()))
+                          },
+                          child: CardItem(
+                              imageUrl: AppSvgs.social_media_svg,
+                              title: 'Rede MultiSchool'),
+                        )
                       ],
                     )),
               ],

@@ -1,17 +1,55 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multischool_app/theme/colors.dart';
 import 'package:multischool_app/theme/imageExporter.dart';
 
 class IdentificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SvgPicture.asset(AppSvgs.identity_svg),
-        Center(
-          child: Text('Tela de Notificações'),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          'Identificação',
+          style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: AppColors.primary),
         ),
-      ],
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(AppSvgs.identity_svg,
+                width: 120, height: 120, color: AppColors.primary),
+            SizedBox(height: 20),
+            Text(
+              'Tela de Identificação',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Por favor, faça verificação de identidae ou para continuar.',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

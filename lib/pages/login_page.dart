@@ -77,7 +77,12 @@ class _LoginPageState extends State<LoginPage> {
                                   controller: _adesaoControler,
                                   onTap: () =>
                                       setState(() => activeInput = 'adesao'),
-                                  decoration: AppInputs.white_input_app,
+                                  decoration:
+                                      AppInputs.white_input_app.copyWith(
+                                          focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Color(0xFFB86800), width: 2),
+                                  )),
                                 )
                               ],
                             ),
@@ -94,7 +99,13 @@ class _LoginPageState extends State<LoginPage> {
                                   keyboardType: TextInputType.visiblePassword,
                                   onTap: () =>
                                       setState(() => activeInput = 'senha'),
-                                  decoration: AppInputs.white_input_app,
+                                  decoration:
+                                      AppInputs.white_input_app.copyWith(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Color(0xFFB86800), width: 2),
+                                    ),
+                                  ),
                                 )
                               ],
                             ),

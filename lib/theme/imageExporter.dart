@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppImages {
   static String logo = 'assets/logos/bg-cards.png';
   static String oscar_ribas = 'assets/logos/oscar_ribas.png';
+  static String visa_card = 'assets/logos/in-visa-classic-card-498x280.png';
   static String logo_for_white = 'assets/logos/logo_for_white_bg.png';
   static String logo_for_dark = 'assets/logos/logo_for_dark_bg.png';
 }
@@ -21,6 +22,12 @@ class AppUsers {
   static const String joao = 'assets/icons/joao.png';
 }
 
+class AppBanks {
+  static const String atl = 'assets/banks/atl.png';
+  static const String bic = 'assets/banks/bic.png';
+  static const String bfa = 'assets/banks/bfa.png';
+  static const String bai = 'assets/banks/bai.png';
+}
 
 class Qualquer {
   static const Text textoPriomaroo = Text('Textos swf hshefef ');
@@ -28,6 +35,15 @@ class Qualquer {
 
 class AppSvgs {
   static String bell_svg = 'assets/svgs/bell.svg';
+  static String actual_subsription_svg =
+      'assets/svgs/graduation-graduate-svgrepo-com.svg';
+  static String actual_subsription_2_svg =
+      'assets/svgs/graduation-professor-education-phd-svgrepo-com.svg';
+  static String social_media_svg = 'assets/svgs/social-media-svgrepo-com.svg';
+  static String creit_card_svg = 'assets/svgs/credit-card-svgrepo-com.svg';
+  static String student_svg = 'assets/svgs/student-svgrepo-com.svg';
+  static String intern_svg =
+      'assets/svgs/student-learn-study-university-life-svgrepo-com.svg';
   static String pin_map_svg = 'assets/svgs/gps-location-map-svgrepo-com.svg';
   static String who2_svg =
       'assets/svgs/men-and-women-who-bow-and-apologize-upper-body-svgrepo-com (2).svg';
